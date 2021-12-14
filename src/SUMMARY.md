@@ -1,0 +1,20 @@
+# Summary
+
+- [The INSERT INTO statement](./select_into.md)
+- [The CREATE TABLE ... LIKE statement](./create_table_like.md)
+- [The CREATE TABLE ... SELECT statement](./create_table_select.md)
+- [Loading Data from Comma-Delimited Files](./bulk_insert_statement.md)
+- [Exporting Data to Comma-Delimitted Files](./write_data_to_file.md)
+- [Sequence](./sequency.md)
+- [Modifying data through table expressions](./modifying_data_through_table_expression.md)
+- [Modifications with LIMIT and OFFSET-FETCH](./modification_with_top.md)
+- [Window functions](./window_functions.md)
+- [Exercise 1](./exercise_1.md)
+- [Exercise 2](./exercise_3.md)
+- [Exercise 3](./exercise_4.md)
+- [Exercise 4](./exercise_5.md)
+- [Exercise 5](./exercise_6.md)
+- [Exercise 6](./exercise_7.md)
+- [Querying metadata](./querying_metada.md)
+- [Merge data?](./merge_data.md)
+  
