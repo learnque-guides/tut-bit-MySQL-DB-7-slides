@@ -2,7 +2,7 @@
 
 By using CREATE TABLE ... SELECT statement create a copy of *Customers* table. Name it as *CustomersForUpdate*
 
-Run the following query against dbo.Customers, and notice that some rows have a NULL in the region column:
+Run the following query against *CustomersForUpdate*, and notice that some rows have a NULL in the region column:
 
 ```sql
 SELECT * FROM CustomersForUpdate;
