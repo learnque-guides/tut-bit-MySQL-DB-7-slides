@@ -41,8 +41,8 @@ Other example:
 SELECT
          orderdate,
             freight,
-         ROW_NUMBER()   OVER(PARTITION BY YEAR(orderdate)) AS 'row_number',
-         SUM(freight)   OVER(PARTITION BY YEAR(orderdate)) AS 'total_freight_for_order_year'
+         ROW_NUMBER()   OVER(PARTITION BY YEAR(orderdate)) AS `row_number`,
+         SUM(freight)   OVER(PARTITION BY YEAR(orderdate)) AS `total_freight_for_order_year`
        FROM Orders
 ORDER BY orderdate;
 ```

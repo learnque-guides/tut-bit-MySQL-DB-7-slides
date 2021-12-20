@@ -6,7 +6,7 @@
 - [Loading Data from Comma-Delimited Files](./bulk_insert_statement.md)
 - [Exporting Data to Comma-Delimitted Files](./write_data_to_file.md)
 - [Sequence](./sequency.md)
-- [Modifying data through table expressions](./modifying_data_through_table_expression.md)
+- [Modifying data through join](./modifying_data_through_table_expression.md)
 - [Modifications with LIMIT and OFFSET-FETCH](./modification_with_top.md)
 - [Window functions](./window_functions.md)
 - [Exercise 1](./exercise_1.md)
