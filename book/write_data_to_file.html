@@ -156,6 +156,9 @@
 <p>It is better to use commandline utils</p>
 <pre><code class="language-bash">mysql -uroot -padmin -e'USE lessons; SELECT * FROM Orders;' &gt; test.csv
 </code></pre>
+<p>If you want to export all database you can use:</p>
+<pre><code class="language-bash">mysqldump -uroot -padmin lessons
+</code></pre>
 
                 </main>
 

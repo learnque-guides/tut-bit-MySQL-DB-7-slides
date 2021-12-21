@@ -199,6 +199,9 @@ FIELDS TERMINATED BY ',' LINES TERMINATED BY ';';
 <p>It is better to use commandline utils</p>
 <pre><code class="language-bash">mysql -uroot -padmin -e'USE lessons; SELECT * FROM Orders;' &gt; test.csv
 </code></pre>
+<p>If you want to export all database you can use:</p>
+<pre><code class="language-bash">mysqldump -uroot -padmin lessons
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sequence"><a class="header" href="#sequence">Sequence</a></h1>
 <p>In MySQL, a sequence is a list of integers generated in the ascending order i.e., 1, 2, 3...</p>
 <p>To create a sequence in MySQL automatically, you set the AUTO_INCREMENT attribute for a column, which typically is a primary key column.</p>
