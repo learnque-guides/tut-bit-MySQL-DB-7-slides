@@ -167,16 +167,16 @@
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="loading-data-from-comma-delimited-files"><a class="header" href="#loading-data-from-comma-delimited-files">Loading Data from Comma-Delimited Files</a></h1>
 <p>You use the <em>LOAD DATA INFILE</em> statement to insert into an existing table data originating from a file. </p>
-<pre><code class="language-sql">LOAD DATA INFILE 'some_file.csv' INTO TABLE some_table
+<pre><code class="language-sql">LOAD DATA INFILE 'cars.csv' INTO TABLE some_table
 FIELDS TERMINATED BY ',' LINES TERMINATED BY ';';
 </code></pre>
 <ul>
 <li>Create a simple Car table with type column as varchar, number column as varchar</li>
-<li>Create file cars.txt with conext like:</li>
+<li>Create file cars.csv with conext like:</li>
 </ul>
-<pre><code>skoda,rlt111
-toyouta,mnt233
-honda,mrt123
+<pre><code>skoda,rlt11;
+toyouta,mnt233;
+honda,mrt123;
 </code></pre>
 <ul>
 <li>Upload data to your created table</li>
@@ -185,13 +185,19 @@ honda,mrt123
 <p>You need to put this file in:</p>
 <pre><code class="language-sql">SELECT @@secure_file_priv;
 </code></pre>
+<p>If you do not have this variable specified then you need to use such sql:</p>
+<pre><code class="language-sql">LOAD DATA LOCAL INFILE 'cars.csv' INTO TABLE some_table
+FIELDS TERMINATED BY ',' LINES TERMINATED BY ';';
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="exporting-data-to-comma-delimitted-files"><a class="header" href="#exporting-data-to-comma-delimitted-files">Exporting Data to Comma-Delimitted Files</a></h1>
 <p>You can export file to csv file as well:</p>
-<pre><code class="language-sql">SELECT emp_no, first_name, last_name, title, from_date
-    FROM employees JOIN titles USING (emp_no)
-    WHERE title = 'Manager' AND to_date = '9999-01-01'
-    INTO OUTFILE '/var/lib/mysql-files/managers.csv'
+<pre><code class="language-sql">SELECT *
+    FROM Employees JOIN Orders O on Employees.empid = O.empid
+    INTO OUTFILE 'employees.csv'
     FIELDS TERMINATED BY ',';
+</code></pre>
+<p>It is better to use commandline utils</p>
+<pre><code class="language-bash">mysql -uroot -padmin -e'USE lessons; SELECT * FROM Orders;' &gt; test.csv
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sequence"><a class="header" href="#sequence">Sequence</a></h1>
 <p>In MySQL, a sequence is a list of integers generated in the ascending order i.e., 1, 2, 3...</p>

@@ -3,9 +3,14 @@
 You can export file to csv file as well:
 
 ```sql
-SELECT emp_no, first_name, last_name, title, from_date
-    FROM employees JOIN titles USING (emp_no)
-    WHERE title = 'Manager' AND to_date = '9999-01-01'
-    INTO OUTFILE '/var/lib/mysql-files/managers.csv'
+SELECT *
+    FROM Employees JOIN Orders O on Employees.empid = O.empid
+    INTO OUTFILE 'employees.csv'
     FIELDS TERMINATED BY ',';
+```
+
+It is better to use commandline utils
+
+```bash
+mysql -uroot -padmin -e'USE lessons; SELECT * FROM Orders;' > test.csv
 ```

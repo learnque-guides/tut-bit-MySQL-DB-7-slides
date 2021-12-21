@@ -3,17 +3,17 @@
 You use the *LOAD DATA INFILE* statement to insert into an existing table data originating from a file. 
 
 ```sql
-LOAD DATA INFILE 'some_file.csv' INTO TABLE some_table
+LOAD DATA INFILE 'cars.csv' INTO TABLE some_table
 FIELDS TERMINATED BY ',' LINES TERMINATED BY ';';
 ```
 
 * Create a simple Car table with type column as varchar, number column as varchar
-* Create file cars.txt with conext like:
+* Create file cars.csv with conext like:
 
 ```
-skoda,rlt111
-toyouta,mnt233
-honda,mrt123
+skoda,rlt11;
+toyouta,mnt233;
+honda,mrt123;
 ```
 * Upload data to your created table
 
@@ -24,4 +24,11 @@ You need to put this file in:
 
 ```sql
 SELECT @@secure_file_priv;
+```
+
+If you do not have this variable specified then you need to use such sql:
+
+```sql
+LOAD DATA LOCAL INFILE 'cars.csv' INTO TABLE some_table
+FIELDS TERMINATED BY ',' LINES TERMINATED BY ';';
 ```

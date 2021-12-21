@@ -148,16 +148,16 @@
                 <main>
                     <h1 id="loading-data-from-comma-delimited-files"><a class="header" href="#loading-data-from-comma-delimited-files">Loading Data from Comma-Delimited Files</a></h1>
 <p>You use the <em>LOAD DATA INFILE</em> statement to insert into an existing table data originating from a file. </p>
-<pre><code class="language-sql">LOAD DATA INFILE 'some_file.csv' INTO TABLE some_table
+<pre><code class="language-sql">LOAD DATA INFILE 'cars.csv' INTO TABLE some_table
 FIELDS TERMINATED BY ',' LINES TERMINATED BY ';';
 </code></pre>
 <ul>
 <li>Create a simple Car table with type column as varchar, number column as varchar</li>
-<li>Create file cars.txt with conext like:</li>
+<li>Create file cars.csv with conext like:</li>
 </ul>
-<pre><code>skoda,rlt111
-toyouta,mnt233
-honda,mrt123
+<pre><code>skoda,rlt11;
+toyouta,mnt233;
+honda,mrt123;
 </code></pre>
 <ul>
 <li>Upload data to your created table</li>
@@ -165,6 +165,10 @@ honda,mrt123
 <p>Note: By default, MySQL doesn’t let you load any data using the LOAD DATA INFILE command. The behavior is controlled by the secure_file_priv system variable. </p>
 <p>You need to put this file in:</p>
 <pre><code class="language-sql">SELECT @@secure_file_priv;
+</code></pre>
+<p>If you do not have this variable specified then you need to use such sql:</p>
+<pre><code class="language-sql">LOAD DATA LOCAL INFILE 'cars.csv' INTO TABLE some_table
+FIELDS TERMINATED BY ',' LINES TERMINATED BY ';';
 </code></pre>
 
                 </main>
